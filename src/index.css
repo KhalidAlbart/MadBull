@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: 'Alegreya', sans-serif;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

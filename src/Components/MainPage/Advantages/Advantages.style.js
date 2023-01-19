@@ -10,6 +10,7 @@ export const Section = styled.section`
     padding: 5rem;
     justify-content: center;
     align-items: center;
+    background: ${Colors.white};
 `;
 
 export const RoundedImage = styled.img`

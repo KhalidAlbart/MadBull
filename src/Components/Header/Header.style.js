@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Section = styled.header`
-    position: fixed;;
+    top: 0;
+    position: sticky;
     width: 100%;
     z-index: 100;
 `;
