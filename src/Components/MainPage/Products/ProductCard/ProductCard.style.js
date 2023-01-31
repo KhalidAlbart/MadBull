@@ -21,11 +21,11 @@ export const PTitle = styled.h2`
 `;
 
 export const PInfo = styled.p`
-    display: ${props => props.display === 'none' ? 'none' : 'block' };
+    display: ${props => props.hide ? 'none' : 'block' };
     font-size: ${Font.size.smoll}rem;
     color: ${Colors.white};
     font-weight: ${Font.weight.regular};
-    text-transform: ${props => props.normal ? 'normal' : 'uppercase'};
+    text-transform: ${props => props.noTransform ? 'normal' : 'uppercase'};
     ${fontMixin}
 
     & em {

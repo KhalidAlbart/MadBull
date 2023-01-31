@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import * as Sort from './SortField.style';
 
 export default function SortCase(props) {
-    const [sortCase, setSortCase] = useState('case 1');
+    const sortCase = useSelector(state => state.sort)
+    const dispatch = useDispatch()
 
     const arrow = {
         upwards: '\u2191',
@@ -16,10 +18,10 @@ export default function SortCase(props) {
     return (
         <Sort.Wrap maxWidth='200px'>
             <Sort.Select onChange={userChange} value={sortCase}>
-                <option value='case1'>{arrow.upwards} Case 1</option>
-                <option value='case2'>{arrow.downwards} Case 2</option>
-                <option value='case3'>{arrow.upwards} Case 3</option>
-                <option value='case4'>{arrow.downwards} Case 4</option>
+                <option value='COST-UP'>{arrow.upwards} Цена</option>
+                <option value='COST-DOWN'>{arrow.downwards} Цена</option>
+                <option value='NAME-UP'>{arrow.upwards} Алфавит</option>
+                <option value='NAME-DOWN'>{arrow.downwards} Алфавит</option>
             </Sort.Select>
         </Sort.Wrap>
     );
