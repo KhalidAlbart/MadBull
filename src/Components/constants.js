@@ -28,3 +28,5 @@ export const Font = {
         bold: 700
     }
 }
+
+export const MAX_CAPACITY = 6

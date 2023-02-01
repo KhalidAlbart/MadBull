@@ -3,7 +3,6 @@ import { Colors, Font } from '../../../constants';
 import { Container } from "../../../Container/Container.style";
 import * as Template from '../SearchField/SearchField.style';
 
-
 const fontMixin = `
     font-style: normal;
     letter-spacing: 0.1rem;

@@ -1,4 +1,4 @@
-import * as S from './ProductCard.style'
+import * as S from "./ProductCard.style"
 import React, { useState } from "react"
 import { useSelector } from "react-redux"
 import { HiPlusSm, HiMinusSm, HiShoppingCart } from "react-icons/hi"
@@ -6,17 +6,16 @@ import { HiPlusSm, HiMinusSm, HiShoppingCart } from "react-icons/hi"
 
 export default function ProductCard(props) {
     const viewCase = useSelector(state => state.view)
-    sessionStorage.setItem('view', JSON.stringify(viewCase))
-
+    
     return (
-        <S.PBox view={viewCase}>
-            <img src={props.image} alt='ProductPoster.png' />
+        <S.PBox view={viewCase === "Grid" ? true : false}>
+            <img src={props.image} alt="ProductPoster.png" />
             <S.PContent>
                 <S.PDesc>
                     <S.PTitle>{props.title}</S.PTitle>
                     <S.PInfo>Вес: <em>{props.weight}</em></S.PInfo>
                     <S.PInfo>Цена: <em>{props.price}</em></S.PInfo>
-                    <S.PInfo noTransform hide={viewCase}>{props.desc}</S.PInfo>
+                    <S.PInfo noTransform hide={viewCase === "Grid" ? true : false}>{props.desc}</S.PInfo>
                 </S.PDesc>
                 <S.PWrap>
                     <NumberSpinner />
@@ -35,9 +34,9 @@ export function NumberSpinner(props) {
     const implement = () => setCount(count + 1)
 
     return (
-        <S.SpinnerBox maxWidth='115px'>
+        <S.SpinnerBox maxWidth="115px">
             <S.Operator onClick={dicrement} size={S.Font.size.large} fill={S.Colors.white}><HiMinusSm /></S.Operator>
-            <S.Input center maxWidth='60px' onChange={userChange} value={count} />
+            <S.Input center maxWidth="60px" onChange={userChange} value={count} />
             <S.Operator onClick={implement} size={S.Font.size.large} fill={S.Colors.white}><HiPlusSm /></S.Operator>
         </S.SpinnerBox>
     )

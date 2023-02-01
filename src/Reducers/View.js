@@ -1,15 +1,16 @@
-const defaultValue = sessionStorage.getItem('view') ? JSON.parse(sessionStorage.getItem('view')) : true
+const defaultValue = sessionStorage.getItem("view") === "List" ? "List" : "Grid"
 
 const viewReducer = (state = defaultValue, action) => {
     switch (action.type) {
-        case 'LIST':
-            state = false
+        case "LIST":
+            state = "List";
+            sessionStorage.setItem("view", "List");
             return state
-        case 'GRID':
-            state = true
+        case "GRID":
+            state = "Grid";
+            sessionStorage.setItem("view", "Grid");
             return state
         default:
-            state = defaultValue
             return state
     }
 }

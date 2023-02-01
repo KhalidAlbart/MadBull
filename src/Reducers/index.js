@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
-import viewReducer from './View';
-import productListReducer from './ProductList';
-import paginationReducer from './Pagination';
+import { combineReducers } from "redux"
+import viewReducer from './View'
+import productListReducer from './ProductList'
+import paginationReducer from './Pagination'
 
 const reducers = combineReducers({
     view: viewReducer,

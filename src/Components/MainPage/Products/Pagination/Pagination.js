@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { nextAction, prevAction, getByNumberAction } from '../../../../Actions/Pagination';
 import { Button, List, Item } from './Pagination.style';
+
 function Pagination(props) {
     const dispatch = useDispatch();
     const currentPage = useSelector(store => store.pageNumber);
