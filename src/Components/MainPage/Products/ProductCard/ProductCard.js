@@ -29,14 +29,14 @@ export default function ProductCard(props) {
 export function NumberSpinner(props) {
     const [count, setCount] = useState(0)
 
-    const userChange = (event) => event.target.value >= 0 && setCount(event.target.value)
-    const dicrement = () => count > 0 ? setCount(count - 1) : count === 1 ? setCount(0) : false
+    const handleChange = (event) => event.target.value >= 0 && setCount(event.target.value)
+    const dicrement = () => count > 0 ? setCount(count - 1) : false
     const implement = () => setCount(count + 1)
 
     return (
-        <S.SpinnerBox maxWidth="115px">
+        <S.SpinnerBox maxWidth="115px" onSubmit={(event) => event.preventDefault()}>
             <S.Operator onClick={dicrement} size={S.Font.size.large} fill={S.Colors.white}><HiMinusSm /></S.Operator>
-            <S.Input center maxWidth="60px" onChange={userChange} value={count} />
+            <S.Input center maxWidth="60px" onChange={handleChange} value={count} />
             <S.Operator onClick={implement} size={S.Font.size.large} fill={S.Colors.white}><HiPlusSm /></S.Operator>
         </S.SpinnerBox>
     )

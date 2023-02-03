@@ -16,7 +16,7 @@ export const fontMixin = `
     font-feature-settings: 'pnum' on, 'lnum' on;
 `;
 
-export const Wrap = styled.fieldset(props => ({
+export const Wrap = styled.form(props => ({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',

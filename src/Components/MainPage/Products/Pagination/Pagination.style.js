@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { Colors, Font } from '../../../constants';
+import { Colors, Font, MAX_CAPACITY } from '../../../constants';
 import { Button as Template, fontMixin } from '../SearchField/SearchField.style';
+
+export { MAX_CAPACITY }
 
 export const Button = styled(Template)({
     fontSize: Font.size.medium + 'rem',

@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { nextAction, prevAction, getByNumberAction } from '../../../../Actions/Pagination';
-import { Button, List, Item } from './Pagination.style';
+import { Button, List, Item, MAX_CAPACITY } from './Pagination.style';
 
 function Pagination(props) {
     const dispatch = useDispatch();
     const currentPage = useSelector(store => store.pageNumber);
-    const pageCount = Math.ceil(useSelector(store => store.products.length) / 6);
+    const pageCount = Math.ceil(useSelector(store => store.products.length) / MAX_CAPACITY);
     sessionStorage.setItem('page', currentPage);
 
     const items = () => {

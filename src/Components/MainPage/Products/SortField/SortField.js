@@ -11,7 +11,9 @@ export default function SortCase(props) {
         downwards: '\u2193'
     }
     
-    const handleChange = (event) => dispatch(sortAction(event.target.value))
+    const handleChange = (event) => {
+        dispatch(sortAction(event.target.value))
+    }
 
     return (
         <Sort.Wrap maxWidth='200px'>
