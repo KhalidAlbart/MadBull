@@ -14,7 +14,7 @@ export default function Products(props) {
     const products = useSelector(store => store.products)
     const { id } = useParams()
 
-    const productList = (page = id || 1) => {
+    const productList = (page = id) => {
         const start = page * MAX_CAPACITY - MAX_CAPACITY
         const end = start + MAX_CAPACITY
         return [...products].slice(start, end)
@@ -23,7 +23,7 @@ export default function Products(props) {
     return (
         <S.Section>
             <S.Container column background={S.Colors.white} gap='2.5rem' maxWidth='925px'>
-                <S.Title>Товары {id}</S.Title>
+                <S.Title>Товары</S.Title>
                 <S.Container justifyContent='space-between' alignItems='stretch' background={S.Colors.white}>
                     <S.Container alignItems='stretch' background={S.Colors.white} gap='2.5rem' maxWidth='max-content'>
                         <SearchField />
@@ -38,7 +38,7 @@ export default function Products(props) {
                     <NotFound /> :
                     <>
                         <S.Container background={S.Colors.white} gap='5rem' Wrap justifyContent='center' alignItems='stretch'>
-                            {productList().map(product => <ProductCard key={'ProductCard' + product.id} image={product.image} title={product.title} weight={product.weight} price={product.price} desc={product.desc} />)}
+                            {productList().map(product => <ProductCard key={'ProductCard' + product.id} id={product.id} image={product.image} title={product.title} weight={product.weight} price={product.price} desc={product.desc} />)}
                         </S.Container>
                         {
                             productList().length < MAX_CAPACITY ?
