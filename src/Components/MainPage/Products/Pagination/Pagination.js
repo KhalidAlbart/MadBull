@@ -1,42 +1,39 @@
-import { useDispatch, useSelector } from "react-redux";
-import { nextAction, prevAction, getByNumberAction } from '../../../../Actions/Pagination';
-import { Button, List, Item, MAX_CAPACITY } from './Pagination.style';
+import { useSelector } from "react-redux"
+import { Link, useParams } from "react-router-dom"
+import { List, Item, MAX_CAPACITY } from './Pagination.style'
 
 function Pagination(props) {
-    const dispatch = useDispatch();
-    const currentPage = useSelector(store => store.pageNumber);
-    const pageCount = Math.ceil(useSelector(store => store.products.length) / MAX_CAPACITY);
-    sessionStorage.setItem('page', currentPage);
+    const pageCount = Math.ceil(useSelector(store => store.products.length) / MAX_CAPACITY)
+    const { id } = useParams()
 
     const items = () => {
-        const list = [];
+        const list = []
+
         for (let i = 0; i < pageCount; i++) {
-            list.push(i + 1);
+            list.push(i + 1)
         }
-        return list;
+
+        return list
+    }
+    const increment = (value) => {
+        let result = value < pageCount ? value + 1 : value
+        return result
     }
 
-    const handleGetPage = (event) => {
-        dispatch(getByNumberAction(Number(event.target.innerText)));
-    }
-
-    const handleNextPage = () => {
-        currentPage < pageCount && dispatch(nextAction());
-    }
-
-    const handlePrevPage = () => {
-        1 < currentPage && dispatch(prevAction());
+    const dicriment = (value) => {
+        let result = value > 1 ? value - 1 : 1
+        return result
     }
 
     return (
         <>
-            <Button onClick={handlePrevPage}>Назад</Button>
+            <Link to={`/products/page/${dicriment(Number(id))}`}>Назад</Link>
             <List>
-                {items().map(item => <Item key={'page' + item} onClick={handleGetPage}>{item}</Item>)}
+                {items().map(item => <Item key={'page' + item}><Link to={`/products/page/${item}`}>{item}</Link></Item>)}
             </List>
-            <Button onClick={handleNextPage}>Далее</Button>
+            <Link to={`/products/page/${increment(Number(id))}`}>Далее</Link>
         </>
-    );
+    )
 }
 
-export default Pagination;
+export default Pagination

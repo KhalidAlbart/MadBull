@@ -8,13 +8,14 @@ import Pagination from './Pagination/Pagination'
 import NotFound from "./NotFound/NotFound"
 import { MAX_CAPACITY } from "../../constants"
 import { useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
 
 export default function Products(props) {
-    const currentPage = useSelector(store => store.pageNumber)
     const products = useSelector(store => store.products)
+    const { id } = useParams()
 
-    const productList = () => {
-        const start = currentPage * MAX_CAPACITY - MAX_CAPACITY
+    const productList = (page = id || 1) => {
+        const start = page * MAX_CAPACITY - MAX_CAPACITY
         const end = start + MAX_CAPACITY
         return [...products].slice(start, end)
     }
@@ -22,7 +23,7 @@ export default function Products(props) {
     return (
         <S.Section>
             <S.Container column background={S.Colors.white} gap='2.5rem' maxWidth='925px'>
-                <S.Title>Товары</S.Title>
+                <S.Title>Товары {id}</S.Title>
                 <S.Container justifyContent='space-between' alignItems='stretch' background={S.Colors.white}>
                     <S.Container alignItems='stretch' background={S.Colors.white} gap='2.5rem' maxWidth='max-content'>
                         <SearchField />
@@ -33,7 +34,7 @@ export default function Products(props) {
                     </S.Container>
                 </S.Container>
                 {
-                    productList().length < 1 ?
+                    productList().length === 0 ?
                     <NotFound /> :
                     <>
                         <S.Container background={S.Colors.white} gap='5rem' Wrap justifyContent='center' alignItems='stretch'>
