@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { Link as Template } from "react-router-dom"
+import { Colors, Font } from "../constants";
 
 export const Section = styled.header`
     top: 0;
@@ -14,3 +16,23 @@ export const AnimatedLogo = styled.img`
         filter: brightness(50%);
     }
 `;
+
+export const Nav = styled.nav({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2.5rem",
+})
+
+export const Link = styled(Template)({
+    textDecoration: "none",
+    color: Colors.white,
+    fontSize: Font.size.medium + "rem",
+    textTransform: "uppercase",
+    transition: "0.2s all linear",
+    lineHeight: Font.size.medium + "rem",
+
+    [`:hover`]: {
+        color: Colors.lightpink,
+    },
+})

@@ -1,9 +1,6 @@
-export const updateCartAction = (count, itemId) => {
+export const updateCartAction = (data) => {
     return {
         type: "UPDATE_DATA_CART",
-        payload: {
-            value: count,
-            id: itemId
-        }
+        payload: data
     }
 }
