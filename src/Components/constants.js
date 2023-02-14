@@ -11,8 +11,8 @@ export const Colors = {
 export const Limits = {
     min: 100,
     max: 350,
-    containerMaxWidth: 924,
-    transitonDuration: 0.2,
+    containerMaxWidth: 925,
+    transitonDuration: 0.1,
 }
 
 export const Font = {

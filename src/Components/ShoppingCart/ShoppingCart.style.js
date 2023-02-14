@@ -24,8 +24,8 @@ export const CBox = styled(Template.PBox).attrs(props => ({view: false}))({
         top: "2rem",
         right: "2rem",
         position: "absolute",
-        width: Font.size.extralarge + "rem",
-        height: Font.size.extralarge + "rem",
+        width: Font.size.large + "rem",
+        height: Font.size.large + "rem",
         zIndex: 1000,
         
         [`path`]: {
@@ -51,4 +51,21 @@ export const Section = styled.section({
 export const EmptyCart = styled.h2({
     color: Colors.lightpink,
     fontSize: Font.size.large + "rem"
+})
+
+export const Total = styled.h3({
+    textTransform: "uppercase",
+    fontSize: Font.size.medium + "rem",
+    fontWeight: Font.weight.semibold,
+    color: Colors.darkred,
+})
+
+export const Info = styled(PInfo) ({
+    color: Colors.black,
+    cursor: 'default',
+    
+    [`em`]: {
+        fontWeight: Font.weight.bold,
+        color: Colors.darkred,
+    },
 })
