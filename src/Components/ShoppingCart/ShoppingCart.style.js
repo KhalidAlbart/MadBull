@@ -9,7 +9,7 @@ export const PTitle = styled(Template.PTitle)({})
 
 export const PInfo = styled(Template.PInfo)({})
 
-export const CBox = styled(Template.PBox).attrs(props => ({view: false}))({
+export const CBox = styled(Template.PBox).attrs(props => ({ view: false }))({
     maxWidth: "650px",
     maxHeight: "220px",
     position: "relative",
@@ -36,7 +36,13 @@ export const CBox = styled(Template.PBox).attrs(props => ({view: false}))({
         [`:hover path`]: {
             fill: Colors.lightpink,
         },
-    }
+    },
+
+    [`@media (max-width: 575px)`]: {
+        maxHeight: "fit-content",
+        maxWidth: "310px",
+        padding: "2.5rem",
+    },
 })
 
 export const Section = styled.section({

@@ -20,7 +20,7 @@ export default function Contacts(props) {
     микрорайон Центральный, Краснодар</Text>
                 </Wrap>
                 <iframe title="our-location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.5035702589953!2d38.972171933416845!3d45.03500210315323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f04f984dde6c89%3A0xae9ec8d74f5204dc!2z0JrRgNCw0YHQvdC-0LDRgNC80LXQudGB0LrQsNGPINGD0LsuLCAxMTAsINCa0YDQsNGB0L3QvtC00LDRgCwg0JrRgNCw0YHQvdC-0LTQsNGA0YHQutC40Lkg0LrRgNCw0LksIDM1MDAwMA!5e0!3m2!1sru!2sru!4v1675504006873!5m2!1sru!2sru"
-                    width="400" height="300" style={{border: 0}} 
+                    width="400" height="300" style={{ border: 0, maxWidth: "100%" }} 
                     allowFullScreen="" loading="eager" 
                     referrerPolicy="no-referrer-when-downgrade">
                 </iframe>

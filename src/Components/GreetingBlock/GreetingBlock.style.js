@@ -1,10 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Colors } from '../constants';
+
+const fontMixin = css`
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-align: center;
+`
 
 export const Section = styled.section`
     position: relative;
     width: 100%;
-    height: calc(100vh - 8.65rem);
+    height: calc(100vh - 8.4rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,22 +55,26 @@ export const Blackout = styled.div`
         transform: skewX(-30deg);
         z-index: -1;
     }
+
+    @media (max-width: 600px) {
+        &::before {
+            backdrop-filter: brightness(0.5);
+        }
+
+        &::after {
+            content: none;
+        }
+    }
 `;
 
 export const Title = styled.h1`
     font-size: 3.6rem;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
     color: ${props => props.color || Colors.white};
+    ${ fontMixin }
 `;
 
 export const Subtitle = styled.h2`
     font-size: 2.4rem;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
     color: ${props => props.color || Colors.lightyellow};
+    ${ fontMixin }
 `;

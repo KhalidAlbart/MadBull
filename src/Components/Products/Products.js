@@ -24,7 +24,7 @@ export default function Products(props) {
         <S.Section>
             <S.Container column background="inherit" gap="2.5rem" maxWidth={S.Limits.containerMaxWidth + "px"}>
                 <S.Title>Товары</S.Title>
-                <S.Container justifyContent="space-between" alignItems="stretch" background={S.Colors.white}>
+                <S.Container wrap="wrap" justifyContent="space-between" alignItems="stretch" background={S.Colors.white} gap="2.5rem">
                     <S.Container alignItems="stretch" background={S.Colors.white} gap="2.5rem" maxWidth="max-content">
                         <SearchField />
                         <SortField />
@@ -37,7 +37,7 @@ export default function Products(props) {
                     productList().length === 0 ?
                     <NotFound /> :
                     <>
-                        <S.Container background={S.Colors.white} gap="5rem" Wrap justifyContent="center" alignItems="stretch">
+                        <S.Container background={S.Colors.white} gap="5rem" wrap="wrap" justifyContent="center" alignItems="stretch">
                             {productList().map(product => <ProductCard key={"ProductCard" + product.id} id={product.id} image={product.image} title={product.title} weight={product.weight} price={product.price} desc={product.desc} />)}
                         </S.Container>
                         {

@@ -11,7 +11,7 @@ export const Container = styled.div(props => ({
     height: props.height || 'auto',
     display: 'flex',
     flexDirection: props.column ? 'column' : 'row',
-    flexWrap: props.Wrap ? 'wrap' : 'nowrap',
+    flexWrap: props.wrap || 'nowrap',
     justifyContent: props.justifyContent || 'flex-start',
     alignItems: props.alignItems || 'flex-start',
     gap: props.gap ? props.gap : 0,

@@ -86,11 +86,23 @@ export const PBox = styled.div(props => ({
         maxHeight: props.view ? "170px" : "100%",
         width:"100%",
         height: "100%",
-        objectFit: props.view ? "cover" : "contain",
+        objectFit: "cover",
      },
 
     [`:hover`] : { 
         transform: "scale(1.05)",
         boxShadow: "0px 14px 20px " + Colors.darkred,
-     }
+    },
+
+    [`@media (max-width: 575px)`]: {
+        flexDirection: "column",
+        alignItems: "center",
+        paddingTop: !props.view && "2.5rem",
+
+        [`img`]: {
+            borderRadius: !props.view && "50%",
+            maxHeight: !props.view && "150px",
+            maxWidth: !props.view && "150px",
+        },
+    },
 }))
