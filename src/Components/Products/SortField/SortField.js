@@ -6,11 +6,6 @@ import * as Sort from './SortField.style'
 export default function SortCase(props) {
     const dispatch = useDispatch()
 
-    const arrow = {
-        upwards: '\u2191',
-        downwards: '\u2193'
-    }
-    
     const handleChange = (event) => {
         dispatch(sortAction(event.target.value))
     }
@@ -18,10 +13,10 @@ export default function SortCase(props) {
     return (
         <Sort.Wrap maxWidth='200px'>
             <Sort.Select onChange={handleChange} defaultValue='COST-UP'>
-                <option value='COST-UP'>{arrow.upwards} Цена</option>
-                <option value='COST-DOWN'>{arrow.downwards} Цена</option>
-                <option value='NAME-UP'>{arrow.upwards} Алфавит</option>
-                <option value='NAME-DOWN'>{arrow.downwards} Алфавит</option>
+                <option value='COST-UP'>↑ Цена</option>
+                <option value='COST-DOWN'>↓ Цена</option>
+                <option value='NAME-UP'>↑ Алфавит</option>
+                <option value='NAME-DOWN'>↓ Алфавит</option>
             </Sort.Select>
         </Sort.Wrap>
     ); 

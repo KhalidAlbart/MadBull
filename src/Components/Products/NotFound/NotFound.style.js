@@ -7,8 +7,13 @@ export const Container = styled.div(props => ({
     flexWrap: "nowrap",
     justifyContent: "center",
     alignItems: "center",
-    gap: "2rem"
+    gap: "2rem",
 
+    [`svg`]: {
+        fill: Colors.darkred,
+        width: Font.size.extralarge + "rem",
+        height: Font.size.extralarge + "rem",
+    },
 }))
 
 export const Message = styled.h2({

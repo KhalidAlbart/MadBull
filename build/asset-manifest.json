@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cccf4725.css",
+    "main.js": "/static/js/main.214d9e92.js",
+    "static/media/GreetingBlockBG.png": "/static/media/GreetingBlockBG.ffcea6dba9c056e5da65.png",
+    "static/media/Assortiment.png": "/static/media/Assortiment.9cde078d18774331e07a.png",
+    "static/media/Production.png": "/static/media/Production.01cc32f9a240db62d10f.png",
+    "static/media/Bulls.png": "/static/media/Bulls.fec800d57efe120044db.png",
+    "index.html": "/index.html",
+    "main.cccf4725.css.map": "/static/css/main.cccf4725.css.map",
+    "main.214d9e92.js.map": "/static/js/main.214d9e92.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cccf4725.css",
+    "static/js/main.214d9e92.js"
+  ]
+}

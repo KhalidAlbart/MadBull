@@ -1,9 +1,9 @@
 import React from "react"
-import {HiX} from "react-icons/hi"
+import { HiX } from "react-icons/hi"
 import { Limits } from "../constants"
-import {useSelector, useDispatch} from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { updateCartAction } from "../../Actions/ShoppingCard"
-import {NumberSpinner} from "../Products/NumberSpinner/NumberSpinner"
+import { NumberSpinner } from "../Products/NumberSpinner/NumberSpinner"
 import { Title, Section, Container, EmptyCart, CBox, PTitle, PInfo, Total, Info } from "./ShoppingCart.style"
 
 export default function ShoppingCart(props) {
@@ -18,7 +18,7 @@ export default function ShoppingCart(props) {
 
     return (
         <Section>
-            <Container column gap="2.5rem" maxWidth={Limits.containerMaxWidth + "px"} background="inherit">
+            <Container column gap="2.5rem" maxWidth={ Limits.containerMaxWidth + "px" } background="inherit">
                 <Title>Корзина</Title>
                 {
                     Cart.length < 1
@@ -52,7 +52,6 @@ export default function ShoppingCart(props) {
 
 function getTotalWeight(data) {
     let weights = data.map(item => (matchNumber(item.weight) * item.value))
-    console.log(weights)
     return weights.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 }
 

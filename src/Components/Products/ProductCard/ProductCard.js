@@ -8,11 +8,6 @@ import { HiShoppingCart } from "react-icons/hi"
 export default function ProductCard(props) {
     const viewCase = useSelector(state => state.view)
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        // Adding a shoppindg card from our reducer to client's local storage as a Shopping Card item
-    }
-
     return (
         <S.PBox view={viewCase === "Grid" ? true : false}>
             <img src={props.image} alt="ProductPoster.png" />
@@ -23,7 +18,7 @@ export default function ProductCard(props) {
                     <S.PInfo>Цена: <em>{props.price}</em></S.PInfo>
                     <S.PInfo noTransform hide={viewCase === "Grid" ? true : false}>{props.desc}</S.PInfo>
                 </S.PDesc>
-                <S.PWrap onSubmit={handleSubmit}>
+                <S.PWrap onSubmit={ (event) => event.preventDefault() }>
                     <NumberSpinner data={props} />
                     <S.AddToShoppingList size={S.Font.size.extralarge}><HiShoppingCart /></S.AddToShoppingList>
                 </S.PWrap>
